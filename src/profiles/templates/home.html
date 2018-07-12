@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block styles %}
+<style>
+.jumbotron {
+	text-align: center;
+}
+</style>
+{% endblock %}
+{% block jumbotron %}
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron"> 
+        <h1>Student Information Chatbot</h1>
+        <p>Having any Questions related to the Univesity? Ask Here</p>
+      </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+        <div class="col-md-4">
+          
+          		<a href="#"><img src= {% static 'img/class.jpeg' %} class='img-responsive' style="height:300px!important; width:400px!important;" />
+          <p><a class="btn btn-default" href="#" role="button"></a></p>
+        </div>
+        <div class="col-md-4">
+          
+          		<a href="#"><img src= {% static 'img/tum.jpg' %} class='img-responsive' style="height:300px!important; width:400px!important;" />
+       </div>
+        <div class="col-md-4">
+          
+          		<a href="#"><img src= {% static 'img/it.jpeg' %} class='img-responsive' style="height:300px!important; width:400px!important;" />
+        </div>
+      </div>{% endblock %}

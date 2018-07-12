@@ -1,0 +1,21 @@
+{% extends "report_builder/base.html" %}
+{% load staticfiles %}
+
+{% block report_header %}
+    <meta charset="utf-8">
+    <title>Django Report Builder</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <base href="{% url 'report_builder' %}">
+{% endblock %}
+
+{% block content %}
+    {% if not STATIC_URL %}
+        <p>Please add 'django.core.context_processors.static' to context_processors in settings.py</p>
+    {% endif %}
+    <app-root></app-root>
+    <script type="text/javascript" src="{% static 'report_builder/inline.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'report_builder/polyfills.bundle.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'report_builder/styles.bundle.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'report_builder/main.bundle.js' %}"></script>
+{% endblock %}

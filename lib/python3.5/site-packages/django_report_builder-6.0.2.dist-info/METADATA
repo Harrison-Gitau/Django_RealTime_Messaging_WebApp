@@ -1,0 +1,27 @@
+Metadata-Version: 2.0
+Name: django-report-builder
+Version: 6.0.2
+Summary: Query and Report builder for Django ORM
+Home-page: https://gitlab.com/burke-software/django-report-builder
+Author: David Burke
+Author-email: david@burkesoftware.com
+License: BSD
+Keywords: django report
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.3
+Requires-Dist: djangorestframework (>=3.1.0)
+Requires-Dist: openpyxl (>=2.2.1)
+Requires-Dist: python-dateutil
+Requires-Dist: six
+
+UNKNOWN
+
+
