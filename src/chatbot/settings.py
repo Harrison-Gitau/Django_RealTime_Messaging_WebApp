@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',#For whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'chatbot.urls'
 
@@ -156,6 +158,22 @@ if DEBUG:
     STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
 )
+
+
+#To enable cacheable files and Compression with whitenoise
+#In Production/If DEBUG=False
+STATIC_URL = '/static/'
+
+STATICFILES_DIR = (
+    os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
+)
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media", "media-only")
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 SITE_ID = 1

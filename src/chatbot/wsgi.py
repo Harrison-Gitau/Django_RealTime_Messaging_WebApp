@@ -14,3 +14,10 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "chatbot.settings")
 
 application = get_wsgi_application()
+
+#Whitenoise 
+# from whitenoise import WhiteNoise
+# from chatbot import MyWSGIApp
+# application = MyWSGIApp()
+# application = WhiteNoise(application, root = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
+# application.add_files(os.path.join(os.path.dirname(BASE_DIR), "static", "static")

@@ -29,11 +29,9 @@ urlpatterns = [
     path('profile/', profile_views.userProfile, name='profile'),
     path('contact/', contact_views.contact, name='contact'),
     path('accounts/', include('allauth.urls')),
-    path('report_builder/', include('report_builder.urls')),
-    
-    
-
+    path('report_builder/', include('report_builder.urls')),   
 ]
+
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

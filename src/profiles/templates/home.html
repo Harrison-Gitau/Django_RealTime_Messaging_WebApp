@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+
+
+<!--Django Templating to make our code easier to read and more manageable-->
+<!--Use block for each code block to ensure that its rendered by base.html-->
 {% block styles %}
 <style>
 .jumbotron {
@@ -7,6 +11,8 @@
 }
 </style>
 {% endblock %}
+
+<!--Block Two. You can call your block anything-->
 {% block jumbotron %}
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron"> 
@@ -15,7 +21,7 @@
       </div>
 {% endblock %}
 
-
+<!--Another Block-->
 {% block content %}
 <div class="row">
         <div class="col-md-4">
@@ -31,4 +37,5 @@
           
           		<a href="#"><img src= {% static 'img/it.jpeg' %} class='img-responsive' style="height:300px!important; width:400px!important;" />
         </div>
-      </div>{% endblock %}
+      </div>
+{% endblock %}
