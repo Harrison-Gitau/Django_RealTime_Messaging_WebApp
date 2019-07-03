@@ -1,3 +1,6 @@
+#Ignore changes on the local.py file
+chatbot/settings/local.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
