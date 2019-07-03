@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'your gmail email'
@@ -28,7 +28,7 @@ EMAIL_USE_TLS = True
 SECRET_KEY = '$-t7x1=!fu#l(dz^&2h#01x=5q9dst$r@4rp)p&2aoezt11mb&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
