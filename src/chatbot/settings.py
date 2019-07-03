@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-#For heroku hosting
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,9 +28,9 @@ EMAIL_USE_TLS = True
 SECRET_KEY = '$-t7x1=!fu#l(dz^&2h#01x=5q9dst$r@4rp)p&2aoezt11mb&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -57,7 +55,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',#For whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -160,20 +157,6 @@ if DEBUG:
 )
 
 
-#To enable cacheable files and Compression with whitenoise
-#In Production/If DEBUG=False
-STATIC_URL = '/static/'
-
-STATICFILES_DIR = (
-    os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
-)
-STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-MEDIA_URL = "/media/"
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media", "media-only")
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 SITE_ID = 1
@@ -206,6 +189,3 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False
 ACCOUNT_PASSWORD_MIN_LENGTH = 6
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-
-#For heroku hosting
-django_heroku.settings(locals())
